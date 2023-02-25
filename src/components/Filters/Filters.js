@@ -1,17 +1,20 @@
+import Filter from '../Filter/Filter';
+import RangeSlider from 'react-range-slider-input';
+import { useState } from 'react';
 
-const Filters = () => {
+import './Filters.scss';
+
+const Filters = ({ filters, onFilter }) => {
+
+    const elements = filters.map(({ id, ...props }) => {
+        return (
+            <Filter key={id} onFilter={() => { onFilter(id); }} {...props} />
+        )
+    })
+
     return (
-        <div>
-            <div class="dropdown">
-                <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" >
-                    Dropdown button
-                </button>
-                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item" href="#">Action</a>
-                    <a className="dropdown-item" href="#">Another action</a>
-                    <a className="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
+        <div className="header__filters">
+            {elements}
         </div>
 
     );

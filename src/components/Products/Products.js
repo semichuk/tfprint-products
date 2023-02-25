@@ -1,9 +1,11 @@
 
-// const Products = () => {
-//     return (
-
+const Products = () => {
+    return (
+        <div>
+            
+        </div>
               
-//     );
-// }
+    );
+}
 
-// export default Products;
+export default Products;
